@@ -568,6 +568,9 @@ function loadQuestion(index) {
     // Update question counter
     document.getElementById('current-question').textContent = index + 1;
 
+    // Update progress bar
+    updateProgressBar(index);
+
     // Update question text with animation
     const questionElement = document.getElementById('question-text');
     questionElement.innerHTML = question.question;
@@ -599,6 +602,22 @@ function loadQuestion(index) {
         questionElement.parentElement.classList.remove('slide-in');
         optionsContainer.classList.remove('slide-in');
     }, 400);
+}
+
+/**
+ * Update progress bar based on current question
+ */
+function updateProgressBar(currentIndex) {
+    for (let i = 1; i <= currentQuestions.length; i++) {
+        const progressBar = document.getElementById(`progress-${i}`);
+        if (progressBar) {
+            if (i <= currentIndex + 1) {
+                progressBar.classList.add('progress-indicator__bar--active');
+            } else {
+                progressBar.classList.remove('progress-indicator__bar--active');
+            }
+        }
+    }
 }
 
 /**
