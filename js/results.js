@@ -460,11 +460,9 @@ function initSubmitButton() {
         submitBtn.classList.remove('primary-gradient');
         submitBtn.classList.add('bg-green-500');
 
-        // Navigate to next screen after a brief delay
+        // Navigate to course reveal page after a brief delay
         setTimeout(() => {
-            // Placeholder for next screen
-            alert(`Thank you, ${name}! 🎉\n\nWe'll send your personalized ${quizResults.course} course materials to ${whatsapp}.`);
-            // window.location.href = 'course-preview.html';
+            window.location.href = 'course-reveal.html';
         }, 500);
     });
 }
