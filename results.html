@@ -133,11 +133,23 @@
 <body
     class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white min-h-screen flex flex-col items-center justify-start overflow-x-hidden selection:bg-primary selection:text-black">
 
-    <!-- Main Container -->
-    <div class="w-full max-w-md mx-auto flex flex-col min-h-screen relative pb-8">
+    <!-- Top App Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-background-dark border-b border-[#316863]/30">
+        <div class="max-w-md mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <img src="learntubelogo.webp" alt="LearnTube Logo" class="w-7 h-7 rounded-md">
+                <span class="font-bold text-lg tracking-tight text-white">LearnTube.ai</span>
+            </div>
+            <div class="flex items-center gap-1.5 bg-white/10 px-2.5 py-1 rounded-full border border-white/10">
+                <span class="material-symbols-outlined text-yellow-400 text-sm"
+                    style="font-variation-settings: 'FILL' 1;">verified</span>
+                <span class="text-xs font-semibold text-white">Google Partner</span>
+            </div>
+        </div>
+    </header>
 
-        <!-- Top Spacing -->
-        <div class="pt-8"></div>
+    <!-- Main Container -->
+    <div class="w-full max-w-md mx-auto flex flex-col min-h-screen relative pb-8 pt-16">
 
         <!-- Main Content -->
         <main class="flex-1 flex flex-col px-6 gap-6 w-full">
