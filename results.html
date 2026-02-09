@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Results & Contact Collection | LearnTube.ai</title>
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <!-- Theme Config -->
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0df2df",
+                        "primary-dark": "#0bc4b5",
+                        "background-light": "#f5f8f8",
+                        "background-dark": "#102221",
+                        "card-dark": "#182e2c",
+                        "text-secondary": "#90cbc6",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "0.75rem",
+                        "xl": "1rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'glow': '0 0 15px rgba(13, 242, 223, 0.15)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #102221;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #316863;
+            border-radius: 3px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(to right, #ffffff, #90cbc6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .primary-gradient {
+            background: linear-gradient(135deg, #0df2df 0%, #0abfb3 100%);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s ease-out forwards;
+        }
+
+        .animate-scale-in {
+            animation: scaleIn 0.4s ease-out forwards;
+        }
+
+        .stagger-1 {
+            animation-delay: 0.1s;
+        }
+
+        .stagger-2 {
+            animation-delay: 0.2s;
+        }
+
+        .stagger-3 {
+            animation-delay: 0.3s;
+        }
+
+        .stagger-4 {
+            animation-delay: 0.4s;
+        }
+
+        .stagger-5 {
+            animation-delay: 0.5s;
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display antialiased text-slate-900 dark:text-white min-h-screen flex flex-col items-center justify-start overflow-x-hidden selection:bg-primary selection:text-black">
+
+    <!-- Main Container -->
+    <div class="w-full max-w-md mx-auto flex flex-col min-h-screen relative pb-8">
+
+        <!-- Top Navigation / Progress -->
+        <header class="flex flex-col gap-3 p-6 pt-8 w-full">
+            <div class="flex items-center justify-between">
+                <span class="text-white text-sm font-semibold tracking-wide uppercase opacity-90">Analysis
+                    Complete</span>
+                <span class="text-primary text-sm font-bold">80%</span>
+            </div>
+            <!-- Progress Bar -->
+            <div class="w-full bg-[#1e3b38] rounded-full h-2 overflow-hidden">
+                <div
+                    class="h-full bg-primary rounded-full transition-all duration-1000 ease-out w-[80%] shadow-[0_0_10px_rgba(13,242,223,0.5)]">
+                </div>
+            </div>
+            <p class="text-text-secondary text-xs font-medium text-right mt-1">Step 4 of 5</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="flex-1 flex flex-col px-6 gap-6 w-full">
+
+            <!-- Greeting -->
+            <div class="space-y-2 opacity-0 animate-fade-in-up">
+                <h1 class="text-3xl font-bold tracking-tight leading-tight text-white">
+                    <span id="greeting-text">Great job!</span> <br />
+                    <span class="gradient-text">Here is your personalized learning path.</span>
+                </h1>
+                <p class="text-text-secondary text-sm">Based on your answers, we've customized this curriculum just for
+                    you.</p>
+            </div>
+
+            <!-- Results Card -->
+            <div
+                class="bg-card-dark rounded-xl border border-[#316863] overflow-hidden shadow-lg relative group opacity-0 animate-scale-in stagger-2">
+                <!-- Decorative glow behind card -->
+                <div
+                    class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-transparent blur-xl opacity-30 group-hover:opacity-50 transition duration-500">
+                </div>
+
+                <div class="relative p-5">
+                    <!-- Section: Skills Mastered -->
+                    <div class="mb-5" id="skills-mastered-section">
+                        <h3
+                            class="text-xs font-bold uppercase tracking-wider text-green-400 mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">check_circle</span>
+                            Skills Mastered
+                        </h3>
+                        <div class="grid grid-cols-1 gap-2" id="skills-mastered-list">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </div>
+
+                    <!-- Divider -->
+                    <div class="h-px w-full bg-[#316863] mb-5"></div>
+
+                    <!-- Section: Focus Areas -->
+                    <div id="focus-areas-section">
+                        <h3
+                            class="text-xs font-bold uppercase tracking-wider text-primary mb-3 flex items-center gap-2">
+                            <span class="material-symbols-outlined text-sm">target</span>
+                            Focus Areas
+                        </h3>
+                        <div class="grid grid-cols-1 gap-2" id="focus-areas-list">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Form Section -->
+            <div class="pt-4 pb-2 opacity-0 animate-fade-in-up stagger-4">
+                <h2 class="text-xl font-bold text-white mb-4 leading-tight">Where should we send your custom course?
+                </h2>
+
+                <form id="contact-form" class="flex flex-col gap-4">
+                    <!-- Name Input -->
+                    <div class="group relative">
+                        <label class="block text-xs font-medium text-text-secondary mb-1.5 uppercase tracking-wide"
+                            for="name">Your Name</label>
+                        <div class="relative flex items-center">
+                            <div class="absolute left-4 text-text-secondary pointer-events-none flex items-center">
+                                <span class="material-symbols-outlined text-[20px]">person</span>
+                            </div>
+                            <input
+                                class="w-full h-14 pl-12 pr-4 bg-[#183432] border border-[#316863] text-white placeholder-text-secondary/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm font-medium"
+                                id="name" name="name" placeholder="Enter your name" type="text" required />
+                        </div>
+                    </div>
+
+                    <!-- WhatsApp Input -->
+                    <div class="group relative">
+                        <label class="block text-xs font-medium text-text-secondary mb-1.5 uppercase tracking-wide"
+                            for="whatsapp">WhatsApp Number</label>
+                        <div class="relative flex items-center">
+                            <div class="absolute left-4 text-text-secondary pointer-events-none flex items-center">
+                                <span class="material-symbols-outlined text-[20px]">call</span>
+                            </div>
+                            <input
+                                class="w-full h-14 pl-12 pr-4 bg-[#183432] border border-[#316863] text-white placeholder-text-secondary/50 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all shadow-sm font-medium"
+                                id="whatsapp" name="whatsapp" placeholder="+91 98765 43210" type="tel" required />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <!-- Fixed Bottom CTA -->
+        <footer class="p-6 mt-auto w-full flex flex-col items-center gap-4 opacity-0 animate-fade-in-up stagger-5">
+            <button id="submit-btn"
+                class="w-full primary-gradient text-[#102221] font-bold text-lg h-14 rounded-xl shadow-glow hover:shadow-[0_0_20px_rgba(13,242,223,0.4)] transition-all transform hover:-translate-y-0.5 active:translate-y-0 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+                disabled>
+                <span>Get My Personalized Course</span>
+                <span class="material-symbols-outlined text-xl font-bold">arrow_forward</span>
+            </button>
+            <div class="flex items-center gap-2 text-text-secondary/80 text-xs">
+                <span class="material-symbols-outlined text-sm">lock</span>
+                <span>100% Privacy Guaranteed. No spam.</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/results.js"></script>
+</body>
+
+</html>

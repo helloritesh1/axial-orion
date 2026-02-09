@@ -679,8 +679,6 @@ function saveQuizResults() {
         score: `${correctCount}/${currentQuestions.length}`
     });
 
-    alert(`Quiz Complete!\n\nYou scored ${correctCount}/${currentQuestions.length}.\n\nYour personalized ${courseName} course is being prepared!`);
-
-    // Placeholder for next screen navigation
-    // window.location.href = 'course-preview.html';
+    // Navigate to results page
+    window.location.href = 'results.html';
 }
