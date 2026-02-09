@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Skill Assessment Quiz - LearnTube.ai">
+    <title>Quiz - LearnTube.ai</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+
+<body>
+    <!-- Mobile Container -->
+    <div class="quiz-container">
+        <!-- Status Bar (Visual mockup) -->
+        <div class="status-bar">
+            <span class="status-bar__time">9:41</span>
+            <div class="status-bar__icons">
+                <span class="material-symbols-outlined">signal_cellular_alt</span>
+                <span class="material-symbols-outlined">wifi</span>
+                <span class="material-symbols-outlined">battery_full</span>
+            </div>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="progress-indicator">
+            <div class="progress-indicator__bar progress-indicator__bar--active"></div>
+            <div class="progress-indicator__bar progress-indicator__bar--active"></div>
+            <div class="progress-indicator__bar"></div>
+            <div class="progress-indicator__bar"></div>
+        </div>
+
+        <!-- Question Counter -->
+        <div class="question-counter">
+            <span class="question-counter__current" id="current-question">1</span>
+            <span class="question-counter__separator">/</span>
+            <span class="question-counter__total" id="total-questions">3</span>
+        </div>
+
+        <!-- Scrollable Content Area -->
+        <div class="quiz-content">
+            <!-- Question Section -->
+            <div class="quiz-header">
+                <h2 class="quiz-header__question" id="question-text">
+                    Loading question...
+                </h2>
+            </div>
+
+            <!-- Options -->
+            <div class="quiz-options" id="options-container">
+                <!-- Options will be dynamically inserted here -->
+            </div>
+
+            <!-- Hint Box -->
+            <div class="quiz-hint">
+                <div class="quiz-hint__icon">
+                    <span class="material-symbols-outlined filled">lightbulb</span>
+                </div>
+                <p class="quiz-hint__text">
+                    No wrong answers here. This just helps us build the right course for you.
+                </p>
+            </div>
+        </div>
+
+        <!-- Sticky Footer -->
+        <div class="quiz-footer">
+            <button class="quiz-footer__button" id="next-btn" disabled>
+                <span id="btn-text">Next Question</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+        </div>
+
+        <!-- Background Decorative Elements -->
+        <div class="bg-decoration bg-decoration--top"></div>
+        <div class="bg-decoration bg-decoration--bottom"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/quiz.js"></script>
+</body>
+
+</html>

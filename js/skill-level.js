@@ -35,7 +35,7 @@ function initSkillCards() {
         card.addEventListener('click', () => {
             // Remove selected state from all cards
             skillCards.forEach(c => c.classList.remove('skill-card--selected'));
-            
+
             // Add selected state to clicked card
             card.classList.add('skill-card--selected');
 
@@ -75,9 +75,17 @@ function initContinueButton() {
                 course: selectedCourse,
                 skillLevel: selectedLevel
             });
-            // Navigate to next screen (to be implemented)
-            // window.location.href = 'next-screen.html';
-            alert(`Great! You're learning ${selectedCourse} at ${selectedLevel} level.\n\nNext screen coming soon!`);
+
+            // Check skill level and navigate accordingly
+            if (selectedLevel === 'beginner') {
+                // "I'm new to this" - different flow (to be implemented)
+                // For now, show placeholder message
+                alert(`Welcome to ${selectedCourse}!\n\nSince you're new to this, we'll start from the very beginning.\n\nCourse creation screen coming soon!`);
+                // Future: window.location.href = 'course-intro.html';
+            } else {
+                // basic, intermediate, advanced - go to quiz
+                window.location.href = 'quiz.html';
+            }
         }
     });
 }
