@@ -40,18 +40,22 @@
                 <span style="font-size: 0.75rem; font-weight: 600; color: white;">Google Partner</span>
             </div>
         </div>
-        <!-- Progress Indicator -->
-        <div class="progress-indicator"
-            style="display: flex; gap: 0.5rem; padding: 0.5rem 1rem; background: var(--background-dark);">
-            <div class="progress-indicator__bar progress-indicator__bar--active"></div>
-            <div class="progress-indicator__bar"></div>
-            <div class="progress-indicator__bar"></div>
-            <div class="progress-indicator__bar"></div>
-        </div>
     </header>
 
+    <!-- Progress Indicator (Sticky below header) -->
+    <div
+        style="position: fixed; top: 52px; left: 0; right: 0; z-index: 49; background: var(--background-dark); padding: 0.75rem 1rem; border-bottom: 1px solid rgba(49, 104, 99, 0.2);">
+        <div style="max-width: 28rem; margin: 0 auto; display: flex; gap: 0.5rem;">
+            <div class="progress-indicator__bar progress-indicator__bar--active"
+                style="flex: 1; height: 4px; border-radius: 4px;"></div>
+            <div class="progress-indicator__bar" style="flex: 1; height: 4px; border-radius: 4px;"></div>
+            <div class="progress-indicator__bar" style="flex: 1; height: 4px; border-radius: 4px;"></div>
+            <div class="progress-indicator__bar" style="flex: 1; height: 4px; border-radius: 4px;"></div>
+        </div>
+    </div>
+
     <!-- Mobile Container -->
-    <div class="skill-container" style="padding-top: 100px;">
+    <div class="skill-container" style="padding-top: 110px;">
 
         <!-- Scrollable Content Area -->
         <div class="skill-content">
