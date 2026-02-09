@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTrendingPills();
     initSearchInput();
     initScrollBehavior();
+    initBottomCTA();
 });
 
 /**
@@ -19,10 +20,10 @@ function initTrendingPills() {
         pill.addEventListener('click', () => {
             // Remove active class from all pills
             pills.forEach(p => p.classList.remove('trending-pill--active'));
-            
+
             // Add active class to clicked pill
             pill.classList.add('trending-pill--active');
-            
+
             // Update search input with pill text
             if (searchInput) {
                 searchInput.value = pill.textContent.trim();
@@ -58,8 +59,10 @@ function initSearchInput() {
  */
 function handleSearch(query) {
     if (query.trim()) {
-        console.log('Searching for:', query);
-        // Add your search logic here
+        // Store the selected course name
+        localStorage.setItem('selectedCourse', query.trim());
+        // Navigate to skill level selection page
+        window.location.href = 'skill-level.html';
     }
 }
 
@@ -72,7 +75,7 @@ function initScrollBehavior() {
 
     window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
-        
+
         if (currentScrollY > lastScrollY && currentScrollY > 100) {
             // Scrolling down
             header.style.transform = 'translateY(-100%)';
@@ -80,7 +83,28 @@ function initScrollBehavior() {
             // Scrolling up
             header.style.transform = 'translateY(0)';
         }
-        
+
         lastScrollY = currentScrollY;
     }, { passive: true });
+}
+
+/**
+ * Initialize bottom CTA button
+ */
+function initBottomCTA() {
+    const bottomCTAButton = document.querySelector('.bottom-cta__button');
+    const searchInput = document.querySelector('.search-input');
+
+    if (bottomCTAButton) {
+        bottomCTAButton.addEventListener('click', () => {
+            if (searchInput && searchInput.value.trim()) {
+                // If search input has a value, use it
+                handleSearch(searchInput.value);
+            } else {
+                // Scroll to search and focus
+                searchInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                setTimeout(() => searchInput.focus(), 500);
+            }
+        });
+    }
 }

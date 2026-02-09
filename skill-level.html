@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Select your skill level - LearnTube.ai">
+    <title>Skill Level - LearnTube.ai</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/skill-level.css">
+</head>
+<body>
+    <!-- Mobile Container -->
+    <div class="skill-container">
+        <!-- Status Bar (Visual mockup) -->
+        <div class="status-bar">
+            <span class="status-bar__time">9:41</span>
+            <div class="status-bar__icons">
+                <span class="material-symbols-outlined">signal_cellular_alt</span>
+                <span class="material-symbols-outlined">wifi</span>
+                <span class="material-symbols-outlined">battery_full</span>
+            </div>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="progress-indicator">
+            <div class="progress-indicator__bar progress-indicator__bar--active"></div>
+            <div class="progress-indicator__bar"></div>
+            <div class="progress-indicator__bar"></div>
+            <div class="progress-indicator__bar"></div>
+        </div>
+
+        <!-- Scrollable Content Area -->
+        <div class="skill-content">
+            <!-- Header Section -->
+            <div class="skill-header">
+                <h1 class="skill-header__title">
+                    What's your current <span class="skill-header__highlight">experience level</span>?
+                </h1>
+                <p class="skill-header__subtitle">
+                    We'll customize your learning path to skip what you already know.
+                </p>
+            </div>
+
+            <!-- Course Card (displays selected course) -->
+            <div class="course-card" id="course-card">
+                <div class="course-card__icon">
+                    <span class="material-symbols-outlined">auto_stories</span>
+                </div>
+                <div class="course-card__content">
+                    <span class="course-card__label">You're learning</span>
+                    <h3 class="course-card__name" id="course-name">Loading...</h3>
+                </div>
+                <button class="course-card__change" onclick="window.location.href='index.html'">
+                    <span class="material-symbols-outlined">edit</span>
+                </button>
+            </div>
+
+            <!-- Selection Cards -->
+            <div class="skill-cards">
+                <!-- Beginner Card -->
+                <button class="skill-card" data-level="beginner">
+                    <div class="skill-card__icon-wrapper">
+                        <span class="material-symbols-outlined skill-card__icon">spa</span>
+                    </div>
+                    <div class="skill-card__content">
+                        <h3 class="skill-card__title">I'm new to this</h3>
+                        <div class="skill-card__meta">
+                            <span class="material-symbols-outlined">school</span>
+                            <span>Start from scratch</span>
+                        </div>
+                    </div>
+                    <div class="skill-card__check">
+                        <span class="material-symbols-outlined filled">check_circle</span>
+                    </div>
+                </button>
+
+                <!-- Intermediate Card -->
+                <button class="skill-card" data-level="intermediate">
+                    <div class="skill-card__icon-wrapper">
+                        <span class="material-symbols-outlined skill-card__icon">trending_up</span>
+                    </div>
+                    <div class="skill-card__content">
+                        <h3 class="skill-card__title">Some experience</h3>
+                        <div class="skill-card__meta">
+                            <span class="material-symbols-outlined">fast_forward</span>
+                            <span>Skip intro concepts</span>
+                        </div>
+                    </div>
+                    <div class="skill-card__check">
+                        <span class="material-symbols-outlined filled">check_circle</span>
+                    </div>
+                </button>
+
+                <!-- Advanced Card -->
+                <button class="skill-card" data-level="advanced">
+                    <div class="skill-card__icon-wrapper">
+                        <span class="material-symbols-outlined skill-card__icon">rocket_launch</span>
+                    </div>
+                    <div class="skill-card__content">
+                        <h3 class="skill-card__title">I'm a pro</h3>
+                        <div class="skill-card__meta">
+                            <span class="material-symbols-outlined">science</span>
+                            <span>Deep dive & case studies</span>
+                        </div>
+                    </div>
+                    <div class="skill-card__check">
+                        <span class="material-symbols-outlined filled">check_circle</span>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Sticky Footer -->
+        <div class="skill-footer">
+            <button class="skill-footer__button" id="continue-btn" disabled>
+                Continue
+                <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+        </div>
+
+        <!-- Background Decorative Elements -->
+        <div class="bg-decoration bg-decoration--top"></div>
+        <div class="bg-decoration bg-decoration--bottom"></div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="js/skill-level.js"></script>
+</body>
+</html>
